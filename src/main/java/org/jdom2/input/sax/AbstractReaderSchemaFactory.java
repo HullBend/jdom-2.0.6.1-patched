@@ -127,5 +127,4 @@ public abstract class AbstractReaderSchemaFactory implements XMLReaderJDOMFactor
 	public boolean isValidating() {
 		return true;
 	}
-
 }

@@ -124,90 +124,72 @@ public class SAXBuilderEngine implements SAXEngine {
 		this.validating = validating;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#getJDOMFactory()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public JDOMFactory getJDOMFactory() {
 		return saxHandler.getFactory();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#isValidating()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean isValidating() {
 		return validating;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#getErrorHandler()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ErrorHandler getErrorHandler() {
 		return saxParser.getErrorHandler();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#getEntityResolver()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public EntityResolver getEntityResolver() {
 		return saxParser.getEntityResolver();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#getDTDHandler()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public DTDHandler getDTDHandler() {
 		return saxParser.getDTDHandler();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#isIgnoringElementContentWhitespace()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean getIgnoringElementContentWhitespace() {
 		return saxHandler.getIgnoringElementContentWhitespace();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#isIgnoringBoundaryWhitespace()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean getIgnoringBoundaryWhitespace() {
 		return saxHandler.getIgnoringBoundaryWhitespace();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#isExpandEntities()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean getExpandEntities() {
 		return saxHandler.getExpandEntities();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(org.xml.sax.InputSource)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final InputSource in)
@@ -243,20 +225,16 @@ public class SAXBuilderEngine implements SAXEngine {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.io.InputStream)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final InputStream in) throws JDOMException, IOException {
 		return build(new InputSource(in));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.io.File)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final File file) throws JDOMException, IOException {
@@ -267,21 +245,16 @@ public class SAXBuilderEngine implements SAXEngine {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.net.URL)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final URL url) throws JDOMException, IOException {
 		return build(new InputSource(url.toExternalForm()));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.io.InputStream,
-	 * java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final InputStream in, final String systemId)
@@ -292,10 +265,8 @@ public class SAXBuilderEngine implements SAXEngine {
 		return build(src);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.io.Reader)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final Reader characterStream)
@@ -303,11 +274,8 @@ public class SAXBuilderEngine implements SAXEngine {
 		return build(new InputSource(characterStream));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.io.Reader,
-	 * java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final Reader characterStream, final String systemId)
@@ -318,10 +286,8 @@ public class SAXBuilderEngine implements SAXEngine {
 		return build(src);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jdom2.input.sax.SAXEngine#build(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Document build(final String systemId)
@@ -340,9 +306,6 @@ public class SAXBuilderEngine implements SAXEngine {
 	 *         if there's a problem constructing a URL
 	 */
 	private static URL fileToURL(final File file) throws MalformedURLException {
-
 		return file.getAbsoluteFile().toURI().toURL();
-
 	}
-
 }

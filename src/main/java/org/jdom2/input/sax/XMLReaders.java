@@ -261,5 +261,4 @@ public enum XMLReaders implements XMLReaderJDOMFactory {
 	public boolean isValidating() {
 		return getSupplier().validates();
 	}
-
 }

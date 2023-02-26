@@ -272,5 +272,4 @@ public interface SAXEngine {
 	 */
 	public abstract Document build(final String systemId)
 			throws JDOMException, IOException;
-
 }

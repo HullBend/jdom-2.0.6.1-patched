@@ -61,7 +61,6 @@ import org.xml.sax.*;
  * 
  * @author Jason Hunter
  */
-
 public class BuilderErrorHandler implements ErrorHandler {
 
 	/**

@@ -114,5 +114,4 @@ public class XMLReaderJAXPFactory implements XMLReaderJDOMFactory {
 	public boolean isValidating() {
 		return validating;
 	}
-
 }

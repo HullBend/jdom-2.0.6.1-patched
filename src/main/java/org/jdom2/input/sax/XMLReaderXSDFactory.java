@@ -244,5 +244,4 @@ public class XMLReaderXSDFactory extends AbstractReaderXSDFactory {
 			Source... sources) throws JDOMException {
 		super(SAXParserFactory.newInstance(factoryClassName, classloader), xsdschemas, sources);
 	}
-
 }

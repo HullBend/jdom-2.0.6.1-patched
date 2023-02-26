@@ -321,5 +321,4 @@ public class AbstractReaderXSDFactory extends AbstractReaderSchemaFactory {
 			final SchemaFactoryProvider sfp, Source... sources) throws JDOMException {
 		super(fac, getSchemaFromSource(sfp, sources));
 	}
-
 }

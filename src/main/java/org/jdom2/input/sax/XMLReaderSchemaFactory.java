@@ -101,5 +101,4 @@ public class XMLReaderSchemaFactory extends AbstractReaderSchemaFactory {
 			final Schema schema) {
 		super(SAXParserFactory.newInstance(factoryClassName, classloader), schema);
 	}
-
 }
