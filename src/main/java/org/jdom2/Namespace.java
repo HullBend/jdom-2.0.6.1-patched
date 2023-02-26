@@ -389,5 +389,4 @@ public final class Namespace implements Serializable {
 		throw new InvalidObjectException(
 				"Namespace is serialized through a proxy");
 	}
-	
 }

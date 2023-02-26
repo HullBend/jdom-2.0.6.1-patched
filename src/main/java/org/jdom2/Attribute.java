@@ -122,9 +122,6 @@ public class Attribute extends CloneBase
 	/** JDOM 1.x compatible reference to {@link AttributeType#ENUMERATION} */
 	public final static AttributeType ENUMERATED_TYPE = AttributeType.ENUMERATION;
 
-
-
-
 	/** The local name of the <code>Attribute</code> */
 	protected String name;
 
@@ -762,7 +759,6 @@ public class Attribute extends CloneBase
 		return orderFirst(getNamespace(), getParent().getNamespacesInScope());
 	}
 
-
 	private static final List<Namespace> orderFirst(final Namespace nsa, 
 			final List<Namespace> nsl) {
 		if (nsl.get(0) == nsa) {
@@ -781,5 +777,4 @@ public class Attribute extends CloneBase
 		ret.addAll(tm.values());
 		return Collections.unmodifiableList(ret);
 	}
-
 }

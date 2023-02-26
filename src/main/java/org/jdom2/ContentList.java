@@ -189,7 +189,6 @@ final class ContentList extends AbstractList<Content>
 			throw new IndexOutOfBoundsException("Index: " + index +
 					" Size: " + size);
 		}
-
 	}
 
 	private final void checkPreConditions(final Content child, final int index,
@@ -223,7 +222,6 @@ final class ContentList extends AbstractList<Content>
 			throw new IllegalAddException(
 					"The Element cannot be added as a descendent of itself");
 		}
-
 	}
 
 	/**
@@ -397,7 +395,6 @@ final class ContentList extends AbstractList<Content>
 				setModCount(oldModCount, oldDataModCount);
 			}
 		}
-
 	}
 
 	/**
@@ -1250,7 +1247,6 @@ final class ContentList extends AbstractList<Content>
 			}
 			return left;
 		}
-		
 
 		/**
 		 * Sorts this list using the supplied Comparator to compare elements.
@@ -1480,7 +1476,5 @@ final class ContentList extends AbstractList<Content>
 			expectedmod = getModCount();
 
 		}
-
 	}
-
 }

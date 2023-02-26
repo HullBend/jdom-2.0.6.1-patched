@@ -162,7 +162,6 @@ public class ProcessingInstruction extends Content {
 		return rawData;
 	}
 
-
 	/**
 	 * This will retrieve the target of the PI.
 	 *
@@ -231,7 +230,6 @@ public class ProcessingInstruction extends Content {
 		return this;
 	}
 
-
 	/**
 	 * This will return the value for a specific
 	 * name/value pair on the PI.  If no such pair is
@@ -269,7 +267,6 @@ public class ProcessingInstruction extends Content {
 		this.rawData = toString(mapData);
 		return this;
 	}
-
 
 	/**
 	 * This will remove the pseudo attribute with the specified name.
@@ -481,6 +478,4 @@ public class ProcessingInstruction extends Content {
 	protected ProcessingInstruction setParent(Parent parent) {
 		return (ProcessingInstruction)super.setParent(parent);
 	}
-	
-	
 }

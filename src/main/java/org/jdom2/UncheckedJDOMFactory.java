@@ -162,8 +162,8 @@ public class UncheckedJDOMFactory extends DefaultJDOMFactory {
 	}
 
 	// =====================================================================
-			// Text Factory
-			// =====================================================================
+	// Text Factory
+	// =====================================================================
 
 	@Override
 	public Text text(final int line, final int col, final String str) {

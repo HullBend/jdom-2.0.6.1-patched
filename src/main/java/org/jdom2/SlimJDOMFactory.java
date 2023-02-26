@@ -71,9 +71,6 @@ public class SlimJDOMFactory extends DefaultJDOMFactory {
 	private StringBin cache = new StringBin();
 	private final boolean cachetext;
 	
-	/**
-	 * 
-	 */
 	public SlimJDOMFactory() {
 		this(true);
 	}
@@ -89,7 +86,6 @@ public class SlimJDOMFactory extends DefaultJDOMFactory {
 		super();
 		this.cachetext = cachetext;
 	}
-
 
 	/**
 	 * Reset any Cached String instance data from this SlimJDOMFaxctory cache.
@@ -224,5 +220,4 @@ public class SlimJDOMFactory extends DefaultJDOMFactory {
 	public EntityRef entityRef(final int line, final int col, final String name, final String systemID) {
 		return super.entityRef(line, col, cache.reuse(name), systemID);
 	}
-
 }

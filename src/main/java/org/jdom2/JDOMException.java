@@ -99,5 +99,4 @@ public class JDOMException extends Exception {
 	public JDOMException(String message, Throwable cause)  {
 		super(message, cause);    
 	}    
-
 }

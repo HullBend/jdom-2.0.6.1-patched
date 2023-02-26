@@ -179,23 +179,6 @@ public class Document extends CloneBase implements Parent {
 		return content.indexOf(child);
 	}
 
-	//    /**
-	//     * Starting at the given index (inclusive), return the index of
-	//     * the first child matching the supplied filter, or -1
-	//     * if none is found.
-	//     *
-	//     * @return index of child, or -1 if none found.
-	//     */
-	//    private int indexOf(int start, Filter filter) {
-	//        int size = getContentSize();
-	//        for (int i = start; i < size; i++) {
-	//            if (filter.matches(getContent(i))) {
-	//                return i;
-	//            }
-	//        }
-	//        return -1;
-	//    }
-
 	/**
 	 * This will return <code>true</code> if this document has a
 	 * root element, <code>false</code> otherwise.
@@ -389,11 +372,6 @@ public class Document extends CloneBase implements Parent {
 	public Content getContent(int index) {
 		return content.get(index);
 	}
-
-	//    public Content getChild(Filter filter) {
-		//        int i = indexOf(0, filter);
-	//        return (i < 0) ? null : getContent(i);
-	//    }
 
 	/**
 	 * This will return all content for the <code>Document</code>.
@@ -751,8 +729,6 @@ public class Document extends CloneBase implements Parent {
 		return null;  // documents never have parents
 	}
 
-
-
 	/**
 	 * Always returns this Document Instance
 	 * @return 'this' because this Document is its own Document
@@ -842,7 +818,6 @@ public class Document extends CloneBase implements Parent {
 		if (child instanceof EntityRef) {
 			throw new IllegalAddException("An EntityRef is not allowed at the document root");
 		}
-		
 	}
 
 	/**
@@ -876,8 +851,7 @@ public class Document extends CloneBase implements Parent {
 	public List<Namespace> getNamespacesInherited() {
 		return Collections.emptyList();
 	}
-	
-	
+
 	/**
 	 * JDOM2 Serialization. In this case, DocType is simple. 
 	 */
@@ -927,7 +901,5 @@ public class Document extends CloneBase implements Parent {
 		while (--cs >= 0) {
 			addContent((Content)in.readObject());
 		}
-
 	}
-
 }

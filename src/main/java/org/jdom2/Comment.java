@@ -161,5 +161,4 @@ public class Comment extends Content {
 		.append("]")
 		.toString();
 	}
-
 }

@@ -689,7 +689,5 @@ final class AttributeList extends AbstractList<Attribute>
 			expect = modCount;
 			canremove = false;
 		}
-
 	}
-
 }

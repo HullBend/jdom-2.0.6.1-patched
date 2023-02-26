@@ -56,7 +56,6 @@ package org.jdom2;
 
 import java.util.Arrays;
 
-
 /**
  * This is a mechanism for storing and reusing unique instances of Strings.
  * The idea is that in XML the tag names, attribute names, and other String
@@ -385,5 +384,4 @@ final class StringBin {
 		}
 		return sum;
 	}
-
 }

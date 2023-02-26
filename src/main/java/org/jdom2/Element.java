@@ -485,17 +485,6 @@ public class Element extends Content implements Parent {
 		return content.indexOf(child);
 	}
 
-	//    private int indexOf(int start, Filter filter) {
-	//        int size = getContentSize();
-	//        for (int i = start; i < size; i++) {
-	//            if (filter.matches(getContent(i))) {
-	//                return i;
-	//            }
-	//        }
-	//        return -1;
-	//    }
-
-
 	/**
 	 * Returns the textual content directly held under this element as a string.
 	 * This includes all text within this single element, including whitespace
@@ -992,11 +981,6 @@ public class Element extends Content implements Parent {
 		return content.get(index);
 	}
 
-	//    public Content getChild(Filter filter) {
-	//        int i = indexOf(0, filter);
-	//        return (i < 0) ? null : getContent(i);
-	//    }
-
 	@Override
 	public boolean removeContent(final Content child) {
 		return content.remove(child);
@@ -1481,7 +1465,6 @@ public class Element extends Content implements Parent {
 		return element;
 	}
 
-
 	/**
 	 * Returns an iterator that walks over all descendants in document order.
 	 *
@@ -1507,8 +1490,6 @@ public class Element extends Content implements Parent {
 	public <F extends Content> IteratorIterable<F> getDescendants(final Filter<F> filter) {
 		return new FilterIterator<F>(new DescendantIterator(this), filter);
 	}
-
-
 
 	/**
 	 * This returns a <code>List</code> of all the child elements
@@ -1960,7 +1941,6 @@ public class Element extends Content implements Parent {
 		list.sort(comparator);
 		
 	}
-	
 
 	/**
 	 * Simple method that supports getXMLBaseURI().
@@ -2020,8 +2000,6 @@ public class Element extends Content implements Parent {
 		}
 		return ret;
 	}
-
-
 
 	/**
 	 * JDOM2 Serialization. In this case, DocType is simple. 
@@ -2106,7 +2084,5 @@ public class Element extends Content implements Parent {
 		while (--cs >= 0) {
 			addContent((Content)in.readObject());
 		}
-
 	}
-
 }
