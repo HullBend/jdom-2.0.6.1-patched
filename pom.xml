@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.hullbend</groupId>
     <artifactId>jdom2</artifactId>
-    <version>2.0.6.2-SNAPSHOT</version>
+    <version>2.0.6.2</version>
     <name>com.github.hullbend:jdom2</name>
     <description>A slightly patched Java 8 version of jdom-2.0.6.1 that can also run on Java 17</description>
     <url>https://github.com/HullBend/jdom-2.0.6.1-patched/</url>
