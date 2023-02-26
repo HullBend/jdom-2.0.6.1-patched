@@ -8,26 +8,26 @@
  are met:
 
  1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions, and the following disclaimer.
+	notice, this list of conditions, and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions, and the disclaimer that follows 
-    these conditions in the documentation and/or other materials 
-    provided with the distribution.
+	notice, this list of conditions, and the disclaimer that follows 
+	these conditions in the documentation and/or other materials 
+	provided with the distribution.
 
  3. The name "JDOM" must not be used to endorse or promote products
-    derived from this software without prior written permission.  For
-    written permission, please contact <request_AT_jdom_DOT_org>.
+	derived from this software without prior written permission.  For
+	written permission, please contact <request_AT_jdom_DOT_org>.
 
  4. Products derived from this software may not be called "JDOM", nor
-    may "JDOM" appear in their name, without prior written permission
-    from the JDOM Project Management <request_AT_jdom_DOT_org>.
+	may "JDOM" appear in their name, without prior written permission
+	from the JDOM Project Management <request_AT_jdom_DOT_org>.
 
  In addition, we request (but do not require) that you include in the 
  end-user documentation provided with the redistribution and/or in the 
  software itself an acknowledgement equivalent to the following:
-     "This product includes software developed by the
-      JDOM Project (http://www.jdom.org/)."
+	 "This product includes software developed by the
+	  JDOM Project (http://www.jdom.org/)."
  Alternatively, the acknowledgment may be graphical using the logos 
  available at http://www.jdom.org/images/logos.
 
@@ -116,7 +116,7 @@ public final class FormatStack {
 	 * &lt;tagName&gt;&lt;/tagName&gt; - default is <code>false</code>
 	 */
 	private final boolean expandEmptyElements;
-	
+
 	/**
 	 * Whether or not to output 'specified' Attributes only
 	 */
@@ -140,10 +140,10 @@ public final class FormatStack {
 
 	/** The padding to put between content items */
 	private String[] levelEOLIndent = new String[capacity];
-	
+
 	/** The padding to put after the last item (typically one less indent) */
 	private String[] termEOLIndent  = new String[capacity];
-	
+
 	/**
 	 * Whether TrAX output escaping disabling/enabling PIs are ignored or
 	 * processed - default is <code>false</code>
@@ -174,22 +174,22 @@ public final class FormatStack {
 		defaultMode = format.getTextMode();
 		specifiedAttributesOnly = format.isSpecifiedAttributesOnly();
 
-        mode[depth] = format.getTextMode();
-        if (mode[depth] == TextMode.PRESERVE) {
-            // undo any special indenting and end-of-line management:
-            levelIndent[depth] = null;
-            levelEOL[depth] = null;
-            levelEOLIndent[depth] = null;
-            termEOLIndent[depth] = null;
-        } else {
-            levelIndent[depth] = format.getIndent() == null
-                    ? null : "";
-            levelEOL[depth] = format.getLineSeparator();
-            levelEOLIndent[depth] = levelIndent[depth] == null ?  
-                    null : levelEOL[depth];
-            termEOLIndent[depth] = levelEOLIndent[depth];
-            
-        }
+		mode[depth] = format.getTextMode();
+		if (mode[depth] == TextMode.PRESERVE) {
+			// undo any special indenting and end-of-line management:
+			levelIndent[depth] = null;
+			levelEOL[depth] = null;
+			levelEOLIndent[depth] = null;
+			termEOLIndent[depth] = null;
+		} else {
+			levelIndent[depth] = format.getIndent() == null
+					? null : "";
+			levelEOL[depth] = format.getLineSeparator();
+			levelEOLIndent[depth] = levelIndent[depth] == null ?  
+					null : levelEOL[depth];
+			termEOLIndent[depth] = levelEOLIndent[depth];
+			
+		}
 		ignoreTrAXEscapingPIs[depth] = format.getIgnoreTrAXEscapingPIs();
 		escapeOutput[depth] = true;
 	}
@@ -341,7 +341,7 @@ public final class FormatStack {
 	public String getPadLast() {
 		return termEOLIndent[depth];
 	}
-	
+
 	/**
 	 * Override the current depth's accumulated line indent.
 	 * 
@@ -442,7 +442,7 @@ public final class FormatStack {
 			mode = Arrays.copyOf(mode, capacity);
 			escapeOutput = Arrays.copyOf(escapeOutput, capacity);
 		}
-		
+
 		ignoreTrAXEscapingPIs[depth] = ignoreTrAXEscapingPIs[prev];
 		mode[depth] = mode[prev];
 		escapeOutput[depth] = escapeOutput[prev];
@@ -472,5 +472,4 @@ public final class FormatStack {
 		// not save memory to clear the stack.
 		depth--;
 	}
-
 }

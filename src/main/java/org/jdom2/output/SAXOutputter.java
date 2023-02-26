@@ -758,9 +758,8 @@ public class SAXOutputter {
 			default:
 				handleError(new JDOMException("Invalid element content: " + node));
 		}
-
 	}
-	
+
 	/**
 	 * <p>
 	 * Notifies the registered {@link ErrorHandler SAX error handler}
@@ -794,7 +793,6 @@ public class SAXOutputter {
 			throw exception;
 		}
 	}
-	
 
 	/**
 	 * Returns null.

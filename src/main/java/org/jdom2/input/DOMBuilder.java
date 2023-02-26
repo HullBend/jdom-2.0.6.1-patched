@@ -153,7 +153,7 @@ public class DOMBuilder {
 		buildTree(domElement, doc, null, true);
 		return doc.getRootElement();
 	}
-	
+
 	/**
 	 * This will build a JDOM CDATA from an existing DOM CDATASection
 	 *
@@ -164,7 +164,7 @@ public class DOMBuilder {
 	public org.jdom2.CDATA build(org.w3c.dom.CDATASection cdata) {
 		return factory.cdata(cdata.getNodeValue());
 	}
-	
+
 	/**
 	 * This will build a JDOM Text from an existing DOM Text
 	 *
@@ -175,7 +175,7 @@ public class DOMBuilder {
 	public org.jdom2.Text build(org.w3c.dom.Text text) {
 		return factory.text(text.getNodeValue());
 	}
-	
+
 	/**
 	 * This will build a JDOM Comment from an existing DOM Comment
 	 *
@@ -186,7 +186,7 @@ public class DOMBuilder {
 	public org.jdom2.Comment build(org.w3c.dom.Comment comment) {
 		return factory.comment(comment.getNodeValue());
 	}
-	
+
 	/**
 	 * This will build a JDOM ProcessingInstruction from an existing DOM ProcessingInstruction
 	 *
@@ -197,7 +197,7 @@ public class DOMBuilder {
 	public org.jdom2.ProcessingInstruction build(org.w3c.dom.ProcessingInstruction pi) {
 		return factory.processingInstruction(pi.getTarget(), pi.getData());
 	}
-	
+
 	/**
 	 * This will build a JDOM EntityRef from an existing DOM EntityReference
 	 *
@@ -208,7 +208,7 @@ public class DOMBuilder {
 	public org.jdom2.EntityRef build(org.w3c.dom.EntityReference er) {
 		return factory.entityRef(er.getNodeName());
 	}
-	
+
 	/**
 	 * This will build a JDOM Element from an existing DOM Element
 	 *
@@ -227,8 +227,6 @@ public class DOMBuilder {
 		docType.setInternalSubset(internalDTD);
 		return docType;
 	}
-	
-	
 
 	/**
 	 * This takes a DOM <code>Node</code> and builds up
@@ -461,7 +459,7 @@ public class DOMBuilder {
 
 			case org.w3c.dom.Node.ENTITY_NODE:
 				// ??
-						break;
+				break;
 
 			case org.w3c.dom.Node.DOCUMENT_TYPE_NODE:
 

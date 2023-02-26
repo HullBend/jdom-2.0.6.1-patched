@@ -8,26 +8,26 @@
  are met:
 
  1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions, and the following disclaimer.
+	notice, this list of conditions, and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions, and the disclaimer that follows
-    these conditions in the documentation and/or other materials
-    provided with the distribution.
+	notice, this list of conditions, and the disclaimer that follows
+	these conditions in the documentation and/or other materials
+	provided with the distribution.
 
  3. The name "JDOM" must not be used to endorse or promote products
-    derived from this software without prior written permission.  For
-    written permission, please contact <request_AT_jdom_DOT_org>.
+	derived from this software without prior written permission.  For
+	written permission, please contact <request_AT_jdom_DOT_org>.
 
  4. Products derived from this software may not be called "JDOM", nor
-    may "JDOM" appear in their name, without prior written permission
-    from the JDOM Project Management <request_AT_jdom_DOT_org>.
+	may "JDOM" appear in their name, without prior written permission
+	from the JDOM Project Management <request_AT_jdom_DOT_org>.
 
  In addition, we request (but do not require) that you include in the
  end-user documentation provided with the redistribution and/or in the
  software itself an acknowledgement equivalent to the following:
-     "This product includes software developed by the
-      JDOM Project (http://www.jdom.org/)."
+	 "This product includes software developed by the
+	  JDOM Project (http://www.jdom.org/)."
  Alternatively, the acknowledgment may be graphical using the logos
  available at http://www.jdom.org/images/logos.
 
@@ -122,7 +122,6 @@ public enum XMLReaders implements XMLReaderJDOMFactory {
 		public boolean validates() {
 			return false;
 		}
-
 	}
 
 	private enum DTDSingleton implements FactorySupplier {
@@ -148,7 +147,6 @@ public enum XMLReaders implements XMLReaderJDOMFactory {
 		public boolean validates() {
 			return true;
 		}
-
 	}
 
 	private enum XSDSingleton implements FactorySupplier {
@@ -209,11 +207,10 @@ public enum XMLReaders implements XMLReaderJDOMFactory {
 		public boolean validates() {
 			return true;
 		}
-
 	};
 
 	/** the actual SAXParserFactory in the respective singletons. */
-    private final int singletonID;
+	private final int singletonID;
 
 	/** Private constructor */
 	private XMLReaders(int singletonID) {
@@ -247,10 +244,10 @@ public enum XMLReaders implements XMLReaderJDOMFactory {
 			return supplier.supply().newSAXParser().getXMLReader();
 		} catch (SAXException e) {
 			throw new JDOMException(
-			        "Unable to create a new XMLReader instance", e);
+					"Unable to create a new XMLReader instance", e);
 		} catch (ParserConfigurationException e) {
 			throw new JDOMException(
-			        "Unable to create a new XMLReader instance", e);
+					"Unable to create a new XMLReader instance", e);
 		} catch (Exception e) {
 			throw new JDOMException("It was not possible to configure a "
 			        + "suitable XMLReader to support " + this, e);

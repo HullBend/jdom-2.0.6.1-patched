@@ -8,26 +8,26 @@
  are met:
 
  1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions, and the following disclaimer.
+	notice, this list of conditions, and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions, and the disclaimer that follows
-    these conditions in the documentation and/or other materials
-    provided with the distribution.
+	notice, this list of conditions, and the disclaimer that follows
+	these conditions in the documentation and/or other materials
+	provided with the distribution.
 
  3. The name "JDOM" must not be used to endorse or promote products
-    derived from this software without prior written permission.  For
-    written permission, please contact <request_AT_jdom_DOT_org>.
+	derived from this software without prior written permission.  For
+	written permission, please contact <request_AT_jdom_DOT_org>.
 
  4. Products derived from this software may not be called "JDOM", nor
-    may "JDOM" appear in their name, without prior written permission
-    from the JDOM Project Management <request_AT_jdom_DOT_org>.
+	may "JDOM" appear in their name, without prior written permission
+	from the JDOM Project Management <request_AT_jdom_DOT_org>.
 
  In addition, we request (but do not require) that you include in the
  end-user documentation provided with the redistribution and/or in the
  software itself an acknowledgement equivalent to the following:
-     "This product includes software developed by the
-      JDOM Project (http://www.jdom.org/)."
+	 "This product includes software developed by the
+	  JDOM Project (http://www.jdom.org/)."
  Alternatively, the acknowledgment may be graphical using the logos
  available at http://www.jdom.org/images/logos.
 
@@ -85,24 +85,24 @@ import org.jdom2.JDOMException;
  * @author Rolf Lear
  */
 public class XMLReaderXSDFactory extends AbstractReaderXSDFactory {
-	
+
 	private static final SchemaFactoryProvider xsdschemas = new SchemaFactoryProvider() {
-	    /**
-	     * Use a Thread-Local system to manage SchemaFactory. SchemaFactory is not
-	     * thread-safe, so we need some mechanism to isolate it, and thread-local is
-	     * a logical way because it only creates an instance when needed in each
-	     * thread, and they die when the thread dies. Does not need any
-	     * synchronisation either.
-	     */
-	    private final ThreadLocal<SchemaFactory> schemafactl = new ThreadLocal<SchemaFactory>();
-	    
+		/**
+		 * Use a Thread-Local system to manage SchemaFactory. SchemaFactory is not
+		 * thread-safe, so we need some mechanism to isolate it, and thread-local is
+		 * a logical way because it only creates an instance when needed in each
+		 * thread, and they die when the thread dies. Does not need any
+		 * synchronisation either.
+		 */
+		private final ThreadLocal<SchemaFactory> schemafactl = new ThreadLocal<SchemaFactory>();
+
 		@Override
 		public SchemaFactory getSchemaFactory() {
-            SchemaFactory sfac = schemafactl.get();
-            if (sfac == null) {
-                sfac = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-                schemafactl.set(sfac);
-            }
+			SchemaFactory sfac = schemafactl.get();
+			if (sfac == null) {
+				sfac = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+				schemafactl.set(sfac);
+			}
 			return sfac;
 		}
 	};

@@ -8,26 +8,26 @@
  are met:
 
  1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions, and the following disclaimer.
+	notice, this list of conditions, and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions, and the disclaimer that follows 
-    these conditions in the documentation and/or other materials 
-    provided with the distribution.
+	notice, this list of conditions, and the disclaimer that follows 
+	these conditions in the documentation and/or other materials 
+	provided with the distribution.
 
  3. The name "JDOM" must not be used to endorse or promote products
-    derived from this software without prior written permission.  For
-    written permission, please contact <request_AT_jdom_DOT_org>.
+	derived from this software without prior written permission.  For
+	written permission, please contact <request_AT_jdom_DOT_org>.
 
  4. Products derived from this software may not be called "JDOM", nor
-    may "JDOM" appear in their name, without prior written permission
-    from the JDOM Project Management <request_AT_jdom_DOT_org>.
+	may "JDOM" appear in their name, without prior written permission
+	from the JDOM Project Management <request_AT_jdom_DOT_org>.
 
  In addition, we request (but do not require) that you include in the 
  end-user documentation provided with the redistribution and/or in the 
  software itself an acknowledgement equivalent to the following:
-     "This product includes software developed by the
-      JDOM Project (http://www.jdom.org/)."
+	 "This product includes software developed by the
+	  JDOM Project (http://www.jdom.org/)."
  Alternatively, the acknowledgment may be graphical using the logos 
  available at http://www.jdom.org/images/logos.
 
@@ -85,11 +85,11 @@ public final class Namespace implements Serializable {
 	 * Keys are <i>URI</i>&amp;<i>prefix</i>. 
 	 * Values are Namespace objects 
 	 */
-	
+
 	private static final ConcurrentMap<String, ConcurrentMap<String, Namespace>> 
 			namespacemap = new ConcurrentHashMap
 			<String, ConcurrentMap<String,Namespace>>(512, 0.75f, 64);
-	
+
 	/** Define a <code>Namespace</code> for when <i>not</i> in a namespace */
 	public static final Namespace NO_NAMESPACE = new Namespace(NS_PREFIX_DEFAULT, 
 			NS_URI_DEFAULT);
@@ -97,10 +97,10 @@ public final class Namespace implements Serializable {
 	/** Define a <code>Namespace</code> for the standard xml prefix. */
 	public static final Namespace XML_NAMESPACE = new Namespace(NS_PREFIX_XML, 
 			NS_URI_XML);
-	
+
 	private static final Namespace XMLNS_NAMESPACE = new Namespace(NS_PREFIX_XMLNS,
 	        NS_URI_XMLNS);
-	
+
 	static {
 		// pre-populate the map with the constant namespaces that would 
 		// otherwise fail validation
@@ -135,7 +135,7 @@ public final class Namespace implements Serializable {
 	 * @see Verifier#checkNamespaceURI(String)
 	 */
 	public static Namespace getNamespace(final String prefix, final String uri) {
-		
+
 		// This is a rewrite of the JDOM 1 getNamespace() to use
 		// java.util.concurrent. The motivation is:
 		// 1. avoid having to create a new NamespaceKey for each query.
@@ -175,18 +175,18 @@ public final class Namespace implements Serializable {
 				urimap = xmap;
 			}
 		}
-		
+
 		// OK, we have a container for the URI, let's search on the prefix.
-		
+
 		Namespace ns = urimap.get(prefix == null ? NS_PREFIX_DEFAULT : prefix);
 		if (ns != null) {
 			// got one.
 			return ns;
 		}
-		
+
 		// OK, no namespace yet for that uri/prefix
 		// validate the prefix (the uri is already validated).
-		
+
 		if (NS_URI_DEFAULT.equals(uri)) {
 			// we have an attempt for some prefix
 			// (not "" or it would have found NO_NAMESPACE) on the "" URI
@@ -194,8 +194,8 @@ public final class Namespace implements Serializable {
 			throw new IllegalNameException("", "namespace",
 					"Namespace URIs must be non-null and non-empty Strings");
 		}
-		
-        // http://www.w3.org/TR/REC-xml-names/#xmlReserved 
+
+		// http://www.w3.org/TR/REC-xml-names/#xmlReserved 
 		// The erratum to Namespaces in XML 1.0 that suggests this 
 		// next check is controversial. Not everyone accepts it. 
 		if (NS_URI_XML.equals(uri)) {
@@ -204,40 +204,40 @@ public final class Namespace implements Serializable {
 					"only the '" + NS_PREFIX_XML + "' prefix.");        
 		}
 
-        // http://www.w3.org/TR/REC-xml-names/#xmlReserved 
-        if (NS_URI_XMLNS.equals(uri)) {
-            throw new IllegalNameException(uri, "Namespace URI",
-                    "The " + NS_URI_XMLNS + " must be bound to " +
-                    "only the '" + NS_PREFIX_XMLNS + "' prefix.");        
-        }
+		// http://www.w3.org/TR/REC-xml-names/#xmlReserved 
+		if (NS_URI_XMLNS.equals(uri)) {
+			throw new IllegalNameException(uri, "Namespace URI",
+					"The " + NS_URI_XMLNS + " must be bound to " +
+					"only the '" + NS_PREFIX_XMLNS + "' prefix.");        
+		}
 
 		// no namespace found, we validate the prefix
 		final String pfx = prefix == null ? NS_PREFIX_DEFAULT : prefix;
-		
+
 		String reason;
-		
-        // http://www.w3.org/TR/REC-xml-names/#xmlReserved 
+
+		// http://www.w3.org/TR/REC-xml-names/#xmlReserved 
 		// checkNamespacePrefix no longer checks for xml prefix
 		if (NS_PREFIX_XML.equals(pfx)) {
 		    // The xml namespace prefix was in the map. attempts to rebind it are illegal
 		    throw new IllegalNameException(uri, "Namespace prefix",
-                    "The prefix " + NS_PREFIX_XML + " (any case) can only be bound to " +
-                    "only the '" + NS_URI_XML + "' uri.");
+					"The prefix " + NS_PREFIX_XML + " (any case) can only be bound to " +
+					"only the '" + NS_URI_XML + "' uri.");
 		}
-		
-        // http://www.w3.org/TR/REC-xml-names/#xmlReserved 
-        // checkNamespacePrefix no longer checks for xmlns prefix
-        if (NS_PREFIX_XMLNS.equals(pfx)) {
-            // The xml namespace prefix was in the map. attempts to rebind it are illegal
-            throw new IllegalNameException(uri, "Namespace prefix",
-                    "The prefix " + NS_PREFIX_XMLNS + " (any case) can only be bound to " +
-                    "only the '" + NS_URI_XMLNS + "' uri.");
-        }
-        
+
+		// http://www.w3.org/TR/REC-xml-names/#xmlReserved 
+		// checkNamespacePrefix no longer checks for xmlns prefix
+		if (NS_PREFIX_XMLNS.equals(pfx)) {
+			// The xml namespace prefix was in the map. attempts to rebind it are illegal
+			throw new IllegalNameException(uri, "Namespace prefix",
+					"The prefix " + NS_PREFIX_XMLNS + " (any case) can only be bound to " +
+					"only the '" + NS_URI_XMLNS + "' uri.");
+		}
+
 		if ((reason = Verifier.checkNamespacePrefix(pfx)) != null) {
 			throw new IllegalNameException(pfx, "Namespace prefix", reason);
 		}
-		
+
 		// OK, good bet that we have a new Namespace.
 		ns = new Namespace(pfx, uri);
 		final Namespace prev = urimap.putIfAbsent(pfx, ns);
@@ -254,7 +254,7 @@ public final class Namespace implements Serializable {
 
 	/** The URI for this namespace */
 	private final transient String uri;
-	
+
 	/**
 	 * This will retrieve (if in existence) or create (if not) a 
 	 * <code>Namespace</code> for the supplied URI, and make it usable 
@@ -343,12 +343,12 @@ public final class Namespace implements Serializable {
 	public int hashCode() {
 		return uri.hashCode();
 	}
-	
-	
+
+
 	/* *****************************************
 	 * Serialization
 	 * ***************************************** */
-	
+
 	/**
 	 * JDOM 2.0.0 Serialization version
 	 */
@@ -363,7 +363,7 @@ public final class Namespace implements Serializable {
 			this.pprefix = pprefix;
 			this.puri = puri;
 		}
-		
+
 		private Object readResolve() {
 			return Namespace.getNamespace(pprefix, puri);
 		}
@@ -378,7 +378,7 @@ public final class Namespace implements Serializable {
 	private Object writeReplace() {
 		return new NamespaceSerializationProxy(prefix, uri);
 	}
-	
+
 	/**
 	 * Because Namespace is serialized by proxy, the reading of direct Namespace
 	 * instances is illegal and prohibited.

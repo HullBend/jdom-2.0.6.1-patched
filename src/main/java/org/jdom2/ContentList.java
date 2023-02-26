@@ -8,26 +8,26 @@
  are met:
 
  1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions, and the following disclaimer.
+	notice, this list of conditions, and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions, and the disclaimer that follows
-    these conditions in the documentation and/or other materials
-    provided with the distribution.
+	notice, this list of conditions, and the disclaimer that follows
+	these conditions in the documentation and/or other materials
+	provided with the distribution.
 
  3. The name "JDOM" must not be used to endorse or promote products
-    derived from this software without prior written permission.  For
-    written permission, please contact <request_AT_jdom_DOT_org>.
+	derived from this software without prior written permission.  For
+	written permission, please contact <request_AT_jdom_DOT_org>.
 
  4. Products derived from this software may not be called "JDOM", nor
-    may "JDOM" appear in their name, without prior written permission
-    from the JDOM Project Management <request_AT_jdom_DOT_org).
+	may "JDOM" appear in their name, without prior written permission
+	from the JDOM Project Management <request_AT_jdom_DOT_org).
 
  In addition, we request (but do not require) that you include in the
  end-user documentation provided with the redistribution and/or in the
  software itself an acknowledgement equivalent to the following:
-     "This product includes software developed by the
-      JDOM Project (http://www.jdom.org/)."
+	 "This product includes software developed by the
+	  JDOM Project (http://www.jdom.org/)."
  Alternatively, the acknowledgment may be graphical using the logos
  available at http://www.jdom.org/images/logos.
 
@@ -82,10 +82,10 @@ final class ContentList extends AbstractList<Content>
 
 	/** Our backing list */
 	private Content elementData[] = null;
-	
+
 	/** The amount of valid content in elementData */
 	private int size;
-	
+
 	/**
 	 * Completely remove references to AbstractList.modCount because in
 	 * ContentList it is confusing. As a consequence we also need to implement
@@ -114,7 +114,7 @@ final class ContentList extends AbstractList<Content>
 	ContentList(final Parent parent) {
 		this.parent = parent;
 	}
-	
+
 	/**
 	 * Package internal method to support building from sources that are 100%
 	 * trusted.
@@ -169,7 +169,7 @@ final class ContentList extends AbstractList<Content>
 		// indicate there's a change to the size
 		sizeModCount++;
 	}
-	
+
 	private final void incDataModOnly() {
 		dataModiCount++;
 	}
@@ -555,7 +555,7 @@ final class ContentList extends AbstractList<Content>
 	public Iterator<Content> iterator() {
 		return new CLIterator();
 	}
-	
+
 	@Override
 	public ListIterator<Content> listIterator() {
 		return new CLListIterator(0);
@@ -575,7 +575,7 @@ final class ContentList extends AbstractList<Content>
 	public String toString() {
 		return super.toString();
 	}
-	
+
 	private void sortInPlace(final int[] indexes) {
 		// the indexes are a discrete set of values that have no duplicates,
 		// and describe the relative order of each of them.
@@ -623,22 +623,22 @@ final class ContentList extends AbstractList<Content>
 		}
 		return left;
 	}
-	
-    /**
-     * Sorts this list using the supplied Comparator to compare elements.
-     * 
-     * @param comp - the Comparator used to compare list elements. A null value indicates that the elements' natural ordering should be used
-     * @Since 2.0.6
-     */
+
+	/**
+	 * Sorts this list using the supplied Comparator to compare elements.
+	 * 
+	 * @param comp - the Comparator used to compare list elements. A null value indicates that the elements' natural ordering should be used
+	 * @Since 2.0.6
+	 */
 	@Override
 	public final void sort(final Comparator<? super Content> comp) {
 
 	    if (comp == null) {
-            // sort by the 'natural order', which, there is none.
-            // options, throw exception, or let the current-order represent the natural order.
-            // do nothing is the better alternative.
-            return;
-        }
+			// sort by the 'natural order', which, there is none.
+			// options, throw exception, or let the current-order represent the natural order.
+			// do nothing is the better alternative.
+			return;
+		}
 
 		final int sz = size;
 		int[] indexes = new int[sz];
@@ -651,7 +651,7 @@ final class ContentList extends AbstractList<Content>
 		}
 		sortInPlace(indexes);
 	}
-	
+
 	/* * * * * * * * * * * * * ContentListIterator * * * * * * * * * * * * * * * */
 	/* * * * * * * * * * * * * ContentListIterator * * * * * * * * * * * * * * * */
 	/**
@@ -1252,7 +1252,7 @@ final class ContentList extends AbstractList<Content>
 		 * Sorts this list using the supplied Comparator to compare elements.
 		 * 
 		 * @param comp - the Comparator used to compare list elements. A null value indicates that the elements' natural ordering should be used
-         * @Since 2.0.6
+		 * @Since 2.0.6
 		 */
 		@Override
 		public final void sort(final Comparator<? super F> comp) {

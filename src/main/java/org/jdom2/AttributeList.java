@@ -8,26 +8,26 @@
  are met:
 
  1. Redistributions of source code must retain the above copyright
-    notice, this list of conditions, and the following disclaimer.
+	notice, this list of conditions, and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions, and the disclaimer that follows
-    these conditions in the documentation and/or other materials
-    provided with the distribution.
+	notice, this list of conditions, and the disclaimer that follows
+	these conditions in the documentation and/or other materials
+	provided with the distribution.
 
  3. The name "JDOM" must not be used to endorse or promote products
-    derived from this software without prior written permission.  For
-    written permission, please contact <request_AT_jdom_DOT_org>.
+	derived from this software without prior written permission.  For
+	written permission, please contact <request_AT_jdom_DOT_org>.
 
  4. Products derived from this software may not be called "JDOM", nor
-    may "JDOM" appear in their name, without prior written permission
-    from the JDOM Project Management <request_AT_jdom_DOT_org>.
+	may "JDOM" appear in their name, without prior written permission
+	from the JDOM Project Management <request_AT_jdom_DOT_org>.
 
  In addition, we request (but do not require) that you include in the
  end-user documentation provided with the redistribution and/or in the
  software itself an acknowledgement equivalent to the following:
-     "This product includes software developed by the
-      JDOM Project (http://www.jdom.org/)."
+	 "This product includes software developed by the
+	  JDOM Project (http://www.jdom.org/)."
  Alternatively, the acknowledgment may be graphical using the logos
  available at http://www.jdom.org/images/logos.
 
@@ -84,18 +84,18 @@ final class AttributeList extends AbstractList<Attribute>
 
 	/** The parent Element */
 	private final Element parent;
-	
+
 	private static final Comparator<Attribute> ATTRIBUTE_NATURAL = new Comparator<Attribute>() {
 
-        @Override
-        public int compare(Attribute a1, Attribute a2) {
-            int pcomp = a1.getNamespacePrefix().compareTo(a2.getNamespacePrefix());
-            if (pcomp != 0) {
-                return pcomp;
-            }
-            return a1.getName().compareTo(a2.getName());
-        }
-	    
+		@Override
+		public int compare(Attribute a1, Attribute a2) {
+			int pcomp = a1.getNamespacePrefix().compareTo(a2.getNamespacePrefix());
+			if (pcomp != 0) {
+				return pcomp;
+			}
+			return a1.getName().compareTo(a2.getName());
+		}
+
 	};
 
 	/**
@@ -345,7 +345,6 @@ final class AttributeList extends AbstractList<Attribute>
 				modCount = oldModCount;
 			}
 		}
-
 	}
 
 	/**
@@ -590,7 +589,7 @@ final class AttributeList extends AbstractList<Attribute>
 		}
 		return left;
 	}
-	
+
 	private void sortInPlace(final int[] indexes) {
 		// the indexes are a discrete set of values that have no duplicates,
 		// and describe the relative order of each of them.
