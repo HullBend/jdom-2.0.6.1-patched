@@ -1,11 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.jdom</groupId>
+    <groupId>com.github.hullbend</groupId>
     <artifactId>jdom2</artifactId>
     <version>2.0.6.2-SNAPSHOT</version>
+    <name>com.github.hullbend:jdom2</name>
+    <description>A slightly patched Java 8 version of jdom-2.0.6.1 that can also run on Java 17</description>
+    <url>https://github.com/HullBend/jdom-2.0.6.1-patched/</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>hunterhacker</id>
+            <name>Jason Hunter</name>
+            <email>jhunter@servlets.com</email>
+            <organization>JDOM</organization>
+            <organizationUrl>http://www.jdom.org/</organizationUrl>
+        </developer>
+        <developer>
+            <id>rolfl</id>
+            <name>Rolf Lear</name>
+            <email>jdom@tuis.net</email>
+            <organization>JDOM</organization>
+            <organizationUrl>http://www.jdom.org/</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/HullBend/jdom-2.0.6.1-patched</url>
+        <connection>scm:git:https://github.com/HullBend/jdom-2.0.6.1-patched.git</connection>
+        <developerConnection>scm:git:https://github.com/HullBend/jdom-2.0.6.1-patched.git</developerConnection>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -26,6 +60,7 @@
             </exclusions-->
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -72,4 +107,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
